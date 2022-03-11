@@ -5,7 +5,7 @@ export const setId = () => {
   for (let i = 0; i < 10; i++)
     id += variant.charAt(Math.floor(Math.random() * variant.length));
 
-  return id;
+  return Number(id);
 };
 
 export const setTitle = () => {

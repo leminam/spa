@@ -1,5 +1,5 @@
 export type PropsItem = {
-  id: string
+  id: number
   title: string
 }
 export type Props = {

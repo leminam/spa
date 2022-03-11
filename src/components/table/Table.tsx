@@ -3,9 +3,8 @@ import { Props } from "./types";
 import { Item } from "../item";
 
 export const Table: VFC<Props> = ({ items, searchItem }) => {
-
   const FilterItems = items.filter((item) => {
-    if (searchItem == "") {
+    if (searchItem === "") {
       return item;
     } else if (
       item.title.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())
@@ -16,9 +15,15 @@ export const Table: VFC<Props> = ({ items, searchItem }) => {
 
   return (
     <div className="Content">
-      {FilterItems.map((item) => (
-        <Item item={item} key={item.id} />
-      ))}
+      <table className="bp3-html-table">
+        <tbody>
+          {FilterItems.map((item) => (
+            <tr key={item.id}>
+              <Item item={item} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

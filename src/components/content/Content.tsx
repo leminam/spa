@@ -2,13 +2,11 @@ import { useState } from "react";
 import { setId, setTitle } from "../../shared";
 import { Table } from "../table";
 import { NavigationBar } from "../navigation";
-import { Column, Table2 } from "@blueprintjs/table";
 
 export const Content = () => {
+  const [items, setItems] = useState([{ id: 0, title: "" }]);
 
-  const [items, setItems] = useState([{ id: "", title: "" }]);
-
-  const addNewItem = (e: { preventDefault: () => void; }) => {
+  const addNewItem = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const NewItem = {
       id: setId(),
@@ -20,9 +18,9 @@ export const Content = () => {
   const [searchItem, setSearchItem] = useState("");
 
   return (
-    <div className="Wrapper">
+    <div>
       <NavigationBar onClick={addNewItem} setSearchItem={setSearchItem} />
-      <Table items={items} searchItem={searchItem}/>
+      <Table items={items} searchItem={searchItem} />
     </div>
   );
 };

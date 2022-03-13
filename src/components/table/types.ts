@@ -4,5 +4,5 @@ export type PropsList = {
 }
 export type Props = {
   items: PropsList []
-  searchItem: any
+  searchItem: string
 }

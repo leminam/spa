@@ -6,7 +6,7 @@ import { NavigationBar } from "../navigation";
 export const Content = () => {
   const [items, setItems] = useState([{ id: 0, title: "" }]);
 
-  const addNewItem = (e: { preventDefault: () => void }) => {
+  const addNewItem = (e: any) => {
     e.preventDefault();
     const NewItem = {
       id: setId(),
